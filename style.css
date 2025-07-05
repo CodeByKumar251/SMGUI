@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    background-color: rgb(213, 201, 201);
+    width: 20vw;
+    height: 100vh;
+}
+
+.sidebar nav {
+    padding: 50px 10px;
+}
+
+.sidebar nav li {
+    padding: 26px 15px;
+    list-style: none;
+    font-size: 17px;
+
+}
+
+.menubar{
+    height: 10vh;
+    width: 100vw;
+    background-color: red;
+
+}
+
+.main{
+    /* background-color: aqua;
+    height: 90vh;
+    width: 80vw; */
+
+}
