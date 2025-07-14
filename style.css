@@ -1,87 +1,143 @@
 body,
 html {
-  height: 100%;
+    height: 100%;
 }
 
 .container {
-  display: flex;
-  height: 100vh;
-  flex-direction: row;
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
 }
 
 .sidebar {
-  width: 20vw;
-  height: 100vh;
-  display: flex;
-  padding: 20px;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgb(47, 41, 41);
+    width: 60px;
+    /* collapsed width */
+    height: 100vh;
+    display: flex;
+    /* padding: 20px 0; */
+    /* less padding for collapsed */
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(47, 41, 41);
+    transition: width 0.3s;
+    overflow-x: hidden;
+    position: relative;
 }
 
+.sidebar:hover {
+    width: 20vw;
+    /* expanded width */
+    /* padding: 20px; */
+}
+
+.sidebar .logo,
+.sidebar .example,
+.sidebar .menu-item {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    width: 0;
+    overflow: hidden;
+}
+
+.sidebar:hover .logo,
+.sidebar:hover .example,
+.sidebar:hover .menu-item {
+    opacity: 1;
+    pointer-events: auto;
+    width: 100%;
+    overflow: visible;
+}
+
+.sidebar .example {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .logo {
+    height: 10vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .logo img {
+      height: 89%;
+      width: 72%;
+    }
+
 .example input[type="text"] {
-  width: 90%;
-  font-size: 18px;        /* bigger text */
-  padding: 8px 20px;     /* thicker field */
-  border-radius: 15px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  background-color: #f5f5f5;
-  margin-bottom: 5%;
+    width: 90%;
+    font-size: 18px;
+    /* bigger text */
+    padding: 8px 20px;
+    /* thicker field */
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #f5f5f5;
+    margin-bottom: 5%;
+    transition: width 0.3s;
 }
 
 .menu-item {
-  position: relative;
-  width: 100%;
-  margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    /* transition for smooth appearance */
+    transition: opacity 0.2s;
 }
 
 .menu-btn {
-  width: 100%;
-  padding: 12px 16px;
-  background-color: #5a5353;
-  color: white;
-  border: none;
-  text-align: left;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.2s ease-in-out;
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #5a5353;
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .menu-btn:hover {
-  background-color: #6e6161;
+    background-color: #6e6161;
 }
 
 .submenu {
-  display: none;
-  flex-direction: column;
-  background-color: #373131;
-  border-radius: 4px;
-  padding: 5px 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  z-index: 1;
+    display: none;
+    flex-direction: column;
+    background-color: #373131;
+    border-radius: 4px;
+    padding: 5px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .submenu a {
-  color: #e0e0e0;
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 14px;
+    color: #e0e0e0;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
 }
 
 .submenu a:hover {
-  background-color: #4a4a4a;
+    background-color: #4a4a4a;
 }
 
 /* Show submenu on hover */
 .menu-item:hover .submenu {
-  display: flex;
+    display: flex;
 }
+
 /* .example {
   flex-grow: 1;
   width: 100%;
@@ -92,26 +148,29 @@ html {
 } */
 
 .right-section {
-  width: 80vw;
-  display: flex;
-  flex-direction: column;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .menubar {
-  height: 10vh;
-  width: 100%;
-  background-color: red;
-  display: flex;
-  flex-direction: row-reverse;
+    height: 10vh;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .footer {
-  width: 100%;
-  height: 10vh;
-  background-color: rgb(145, 135, 135);
+    width: 100%;
+
+    height: 10vh;
+    background-color: rgb(145, 135, 135);
 }
 
-.main {
-  height: 80vh;
-  padding: 20px;
+.right-section .main .main-content {
+    height: 80vh;
+    padding: 20px;
+    /* margin: 50px 50px; */
+    /* background-color: red; */
 }
